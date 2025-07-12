@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header className="shadow-md">
-      <div className="flex items-center justify-between px-8 py-4 max-w-[90rem] mx-auto">
-        <div className="flex gap-1">
+      <div className="sm:px8 mx-auto flex max-w-[90rem] items-center justify-between px-4 py-4">
+        <Link to="/" className="flex gap-1">
           <img
             src="https://cdn.prod.website-files.com/61b9e0dd381626819c8d4f83/65e2198d48039ba6444f602b_logo%20hashtag%20-%20h.webp"
             alt="Logo da Hashtag Treinamentos"
@@ -11,14 +13,14 @@ const Header = () => {
           <p className="text-4xl font-bold text-[var(--color-primary-400)]">
             ashtag
           </p>
-        </div>
+        </Link>
 
-        <div className="flex items-center border border-gray-200 rounded-full px-4 py-2 shadow-md">
-          <p className="px-4 border-r border-r-gray-300"> Qualquer Lugar </p>
-          <p className="px-4 border-r border-r-gray-300"> Qualquer Semana </p>
+        <div className="hidden items-center rounded-full border border-gray-200 px-4 py-2 shadow-md lg:flex">
+          <p className="border-r border-r-gray-300 px-4"> Qualquer Lugar </p>
+          <p className="border-r border-r-gray-300 px-4"> Qualquer Semana </p>
           <p className="px-4"> Hóspedes </p>
 
-          <div className="bg-[var(--bg-primary-400)] rounded-full p-2 text-white">
+          <div className="rounded-full bg-[var(--bg-primary-400)] p-2 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -39,7 +41,10 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="flex items-center border border-gray-200 rounded-full px-4 py-2 shadow-md gap-2">
+        <Link
+          to="/login"
+          className="flex items-center gap-2 rounded-full border border-gray-200 px-4 py-2 shadow-md"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -72,8 +77,8 @@ const Header = () => {
             />
           </svg>
 
-          <p> Igor Elias </p>
-        </div>
+          <p className="max-w-20 truncate sm:max-w-32"> Igor Elias </p>
+        </Link>
       </div>
     </header>
   );
